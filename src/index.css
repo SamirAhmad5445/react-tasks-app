@@ -1,0 +1,75 @@
+/* LINKS FOR GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* FOR Task COMPONENT */
+  .checkbox {
+    @apply relative w-4 h-4 rounded-full border-2 border-neutral-100 ring-2 ring-current;
+  }
+
+  .checkbox > input {
+    @apply absolute -inset-0.5 opacity-0 cursor-pointer;
+  }
+
+  /* FOR AddForm COMPONENT */
+  .form-toggle {
+    @apply bg-neutral-950 text-xl text-neutral-100 p-4 rounded-lg
+    fixed bottom-8 right-6 flex items-center;
+  }
+
+  .form-toggle::before {
+    @apply md:content-["Add_Task"] text-neutral-950 text-[0px] transition-all duration-200 leading-none;
+  }
+
+  .form-toggle:hover::before {
+    @apply text-neutral-100 text-xl leading-none mr-4;
+  }
+
+  .form {
+    @apply fixed bottom-0 inset-x-0 md:left-auto md:top-0 
+    rounded-t-3xl md:rounded-none bg-neutral-100 
+    translate-y-full md:translate-y-0 group-open:translate-y-0 
+    md:translate-x-full md:group-open:translate-x-0 
+    transition-transform duration-200 md:w-96 overflow-auto;
+  }
+
+  /* Button */
+  .btn {
+    @apply border-2 border-primary-500 rounded-lg px-6 py-2
+    bg-primary-500 text-neutral-100 text-2xl font-bold;
+  }
+
+  .btn-neutral {
+    @apply btn bg-neutral-100 text-primary-500;
+  }
+}
+
+@layer utilities {
+  .max-container {
+    @apply w-[min(100%,74rem)] mx-auto;
+  }
+
+  .text-heading-2 {
+    @apply text-2xl text-neutral-950 font-bold;
+  }
+
+  .text-heading-1 {
+    @apply text-xl text-neutral-950 font-bold;
+  }
+
+  .bg-checked-blue {
+    @apply [&:has(:checked)]:bg-primary-400;
+  }
+
+  .bg-checked-orange {
+    @apply [&:has(:checked)]:bg-accent-orange;
+  }
+
+  .bg-checked-green {
+    @apply [&:has(:checked)]:bg-accent-green;
+  }
+}
