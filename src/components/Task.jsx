@@ -7,12 +7,12 @@ const Task = ({ data, onRemove }) => {
 
   return (
     <div
-      className={`bg-neutral-100 bg-gradient-to-r ${categories[catIndex].colors.cardColor} to-transparent from-[1rem] to-[1rem] pl-8 py-2 pr-4 flex items-baseline gap-4 rounded-xl shadow-lg`}
+      className={`bg-neutral-100 bg-gradient-to-r ${categories[catIndex].colors.cardColor} to-transparent from-[1rem] to-[1rem] pl-8 py-4 pr-4 whitespace-normal grid grid-cols-[1rem_1fr] items-baseline gap-4 rounded-xl shadow-lg`}
     >
       <div className={`checkbox ${categories[catIndex].colors.checkbox}`}>
         <input type="checkbox" checked={isDone} onChange={() => onRemove(id)} />
       </div>
-      <div className="flex-1 h-full grid grid-rows-[auto_1fr_auto]">
+      <div className="h-full grid grid-rows-[auto_1fr_auto]">
         <h3 className="text-xl leading-none text-neutral-950 font-bold mb-2">
           {title}
         </h3>
